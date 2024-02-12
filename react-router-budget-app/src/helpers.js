@@ -3,10 +3,6 @@ export const fetchData = (key) => {
     return JSON.parse(localStorage.getItem(key))
 }
 
-// delete item
-export const deleteItem = ({key}) => {
-    return localStorage.removeItem(key)
-}
 
 //colors
 const generateRandomColor = () => {
@@ -26,6 +22,18 @@ export const createBudget = ({name, amount}) => {
 
     const existingBudgets = fetchData("budgets") ?? []; 
     return localStorage.setItem("budgets", JSON.stringify([...existingBudgets, newItem]))
+}
+
+//delete item 
+export const deleteItem = ({key, id}) => {
+    const existingData = fetchData(key);
+    if (id){
+        const newData = existingData.filter((item) => item.id !== id);
+        return localStorage.setItem(key, JSON.stringify(newData));
+    }
+
+    return localStorage.removeItem(key);
+
 }
 
 //create expense
@@ -76,5 +84,20 @@ export const percentage = (amt) => {
 }
 
 //formatting date
-export const formatDate  = (epoch) =>  
-new Date(epoch).toLocaleDateString();
+export const formatDate = (epoch) => {
+    // Check if epoch is a valid number
+    if (typeof epoch !== 'number' || isNaN(epoch)) {
+        epoch = Date.now();
+    }
+    
+    // Convert epoch to date string
+    return new Date(epoch).toLocaleDateString();
+}
+
+//get all items from local storage 
+export const getAllMatchingItems = ({category, key, value}) => {
+    const data = fetchData(category) ?? [];
+    return data.filter((item) => item[key] === value);
+}
+
+

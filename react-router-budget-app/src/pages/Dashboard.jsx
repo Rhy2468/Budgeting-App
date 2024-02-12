@@ -1,8 +1,8 @@
 // React Router Dom imports
-import { useLoaderData } from "react-router-dom"
+import { Link, useLoaderData } from "react-router-dom"
 
 // Helper functions
-import { createBudget, createExpense, fetchData, wait } from "../helpers"
+import { createBudget, createExpense, deleteItem, fetchData, wait } from "../helpers"
 
 //components
 import Intro from "../components/Intro"
@@ -11,6 +11,7 @@ import AddBudgetForm from "../components/AddBudgetForm"
 import AddExpenseForm from "../components/AddExpenseForm"
 import BudgetItem from "../components/BudgetItem"
 import Table from "../components/Table"
+
 
 // loader 
 export function dashboardLoader(){
@@ -25,8 +26,6 @@ export function dashboardLoader(){
 export async function dashboardAction({request}){
     await wait();
     const data = await request.formData();
-
-
     const {_action, ...values} = Object.fromEntries(data)
 
     //new user submission 
@@ -65,6 +64,19 @@ export async function dashboardAction({request}){
             throw new Error("Problem Creating Budget")
         }
     }
+
+    if (_action === "deleteExpense"){
+        try{
+            // create expense
+            deleteItem({
+                key: "expenses",
+                id: values.expenseId,
+            });
+            return toast.success("Expense Deleted")
+        } catch(e){
+            throw new Error("Problem deleting item")
+        }
+    }
 }
 
 const Dashboard = () =>{
@@ -89,7 +101,18 @@ const Dashboard = () =>{
                                             <div className="grid-mid">
                                                 <h2>Recent Expenses</h2>
                                                 <Table expenses={expenses.sort((a,b) => b.createdAt - 
-                                                    a.createdAt)} />
+                                                    a.createdAt)
+                                                    .slice(0, 8)
+                                                    } />
+
+                                                    {expenses.length > 8 && (
+                                                        <Link
+                                                            to="expenses"
+                                                            className="btn btn--dark"
+                                                        >
+                                                            All Expenses
+                                                        </Link>
+                                                    )}
 
                                             </div>
                                         )

@@ -1,4 +1,6 @@
+import { Form } from "react-router-dom";
 import { formatCurrency, calculateSpentByBudget, percentage } from "../helpers"
+import { TrashIcon } from "@heroicons/react/24/solid";
 
 const BudgetItem = ({budget}) => {
     const spent = calculateSpentByBudget(budget.id);
