@@ -3,13 +3,6 @@ export const fetchData = (key) => {
     return JSON.parse(localStorage.getItem(key))
 }
 
-
-//colors
-const generateRandomColor = () => {
-    const existingBudgetLength = fetchData("budgets")?.length ?? 0;
-    return `${existingBudgetLength * 24} 65% 50%`
-}
-
 //create budget 
 export const createBudget = ({name, amount}) => {
     const newItem = {

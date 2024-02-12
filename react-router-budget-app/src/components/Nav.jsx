@@ -16,7 +16,7 @@ const Nav = ({userName}) => {
                         method="post"
                         action="/logout"
                         onSubmit={(event) => {
-                            if (!confirm("Delete user and all data?")) {
+                            if (!confirm("Switch Users and Data?")) {
                                 event.preventDefault()
                             }
                         }}

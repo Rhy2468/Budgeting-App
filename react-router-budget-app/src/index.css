@@ -362,9 +362,8 @@ select {
 
 :is(input, select):focus {
   outline: none;
-  border-color: hsl(var(--accent));
-  -webkit-box-shadow: 0 0 0 1px hsl(var(--accent));
-  box-shadow: 0 0 0 1px hsl(var(--accent));
+  border-color: #93c47d;
+  box-shadow: 0 0 0 1px #93c47d;
 }
 
 /* Intro */
