@@ -108,20 +108,20 @@ p {
 /* color utils */
 
 .accent {
-  color: hsl(var(--accent));
+  color: 	#93c47d;
 }
 
 .muted {
-  color: hsl(var(--muted));
+  color: 	#93c47d;
 }
 
 /* links and buttons */
 
 :where(a, .btn) {
-  --color: hsl(var(--text));
-  --backdrop: hsl(var(--accent));
+  --color: 	#93c47d;
+  --backdrop: 	#93c47d;
   font: inherit;
-  color: var(--color);
+  color: 	#93c47d;
   border-radius: var(--round-sm);
   -webkit-transition: -webkit-box-shadow 300ms
     cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -168,11 +168,10 @@ p {
 
 :where(.btn):is(:hover, :focus-visible) {
   background-color: var(--backdrop);
-  color: var(--color);
 }
 
 :where(.btn--dark) {
-  --backdrop: hsl(var(--text));
+  --backdrop: 	#93c47d;
 }
 
 :where(.btn--outline) {
@@ -188,13 +187,13 @@ p {
 }
 
 :where(.btn--warning) {
-  --backdrop: hsl(var(--warning) / 0.1);
-  border: 2px solid hsl(var(--warning));
-  --color: hsl(var(--warning));
+  --backdrop: #93c47d/0.1;
+  border: 2px solid #93c47d;
+  --color: #93c47d;
 }
 
 :where(.btn--warning):is(:hover, :focus-visible) {
-  --backdrop: hsl(var(--warning));
+  --backdrop: #93c47d;
   --color: hsl(var(--bkg));
 }
 
@@ -310,6 +309,7 @@ nav {
   padding: var(--space-md);
   max-width: 1500px;
   margin-inline: auto;
+  font-size: 50px;
 }
 
 nav a {
@@ -343,7 +343,7 @@ select {
   font: inherit;
   font-size: var(--fs-300);
   background-color: hsl(var(--bkg));
-  border: 2px solid hsl(var(--muted));
+  border: 2px solid 	#93c47d;
   border-radius: var(--round-sm);
   padding: var(--space-xs) var(--space-sm);
   height: 100%;
@@ -423,21 +423,16 @@ select {
   gap: var(--space-sm);
   background-color: var(--bkg);
   padding: var(--space-xl);
-  border-radius: var(--round-lg);
   -webkit-box-shadow: 0.25em 0.3em 1em hsl(var(--muted) / 0.2);
   box-shadow: 0.25em 0.3em 1em hsl(var(--muted) / 0.2);
-  border-top: 0.15em solid white;
-  border-left: 0.15em solid white;
-  border-right: 0.15em solid hsl(var(--bkg));
-  border-bottom: 0.15em solid hsl(var(--bkg));
+  border-color: 	#93c47d;
 }
 
 .form-wrapper::before {
   content: "";
   position: absolute;
   inset: 0.55rem;
-  border: 2px dashed hsl(var(--text));
-  border-radius: calc(var(--round-lg) * 0.6);
+  border: 2px dashed 	#93c47d;
   z-index: -1;
 }
 
@@ -476,12 +471,10 @@ select {
   -webkit-box-shadow: 0.25em 0.3em 1em hsl(var(--muted) / 0.2);
   box-shadow: 0.25em 0.3em 1em hsl(var(--muted) / 0.2);
   background-color: var(--bkg);
-  border-radius: var(--round-lg);
-  border: 3px solid hsl(var(--backdrop));
+  border: 3px solid 	#93c47d;
   padding: calc(var(--space-md) / 1.5) calc(var(--space-md) / 1.2);
   gap: var(--space-sm);
   text-decoration: none;
-  color: hsl(var(--backdrop));
 }
 
 .budget > .flex-sm {
@@ -522,7 +515,6 @@ progress {
   border: none;
   width: 100%;
   height: var(--space-sm);
-  border-radius: 100vmax;
   overflow: hidden;
   -webkit-transition: all 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
   -o-transition: all 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -540,7 +532,7 @@ progress[value]::-moz-progress-bar {
 }
 
 progress[value]::-webkit-progress-value {
-  background-color: hsl(var(--backdrop));
+  background-color: 	#93c47d;
   -webkit-transition: all 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
@@ -565,11 +557,9 @@ progress[value]::-webkit-progress-value {
 
 table {
   width: 100%;
+  background-color: #d9ead3;
 }
 
-tr:nth-child(odd) {
-  background-color: hsl(var(--accent) / 0.04);
-}
 
 td {
   border: none;
@@ -595,7 +585,6 @@ table a {
   color: hsl(var(--bkg));
   background-color: hsl(var(--accent));
   padding: var(--space-xs) var(--space-sm);
-  border-radius: var(--round-full);
 }
 
 /* toast */
