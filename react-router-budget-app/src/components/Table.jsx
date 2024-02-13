@@ -1,6 +1,6 @@
 import ExpenseItem from "./ExpenseItem"
 
-const Table = ({expenses}) => {
+const Table = ({expenses, showBudget = true}) => {
     return (
         <div className="Table">
             <table>
@@ -17,9 +17,7 @@ const Table = ({expenses}) => {
                     {
                         expenses.map((expense) => (
                             <tr key={expense.id}>
-
                                 <ExpenseItem expense={expense}/>
-
                             </tr>
                         ))
                     }

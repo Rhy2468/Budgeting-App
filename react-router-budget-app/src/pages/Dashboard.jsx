@@ -61,7 +61,7 @@ export async function dashboardAction({request}){
             })
             return toast.success("New Expense Created")
         } catch(e){
-            throw new Error("Problem Creating Budget")
+            throw new Error("Problem Creating Expense")
         }
     }
 

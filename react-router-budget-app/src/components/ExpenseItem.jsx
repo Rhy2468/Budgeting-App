@@ -14,7 +14,10 @@ const ExpenseItem = ({expense}) => {
         <>
             <td>{expense.name}</td>
             <td>{formatCurrency(expense.amount)}</td>
-            <td>{budget.name}</td>
+            <td><Link
+                to={`/budget/${budget.id}`}
+                >{budget.name}
+                </Link></td>
             <td>{formatDate(expense.createdAt)}</td>
             <td>
                 <fetcher.Form method="post">
