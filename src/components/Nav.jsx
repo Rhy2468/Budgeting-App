@@ -5,7 +5,7 @@ const Nav = ({userName}) => {
     return(
         <nav>
             <NavLink
-                to="/"
+                to="/Budgeting-App/"
                 aria-label = "Go to Home"
             >
                 <span>Budget Tracker</span>
@@ -14,7 +14,7 @@ const Nav = ({userName}) => {
                 userName && (
                     <Form
                         method="post"
-                        action="/logout"
+                        action="/Budgeting-App/logout"
                         onSubmit={(event) => {
                             if (!confirm("Switch Users and Data?")) {
                                 event.preventDefault()

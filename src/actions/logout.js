@@ -15,5 +15,5 @@ export async function logoutAction(){
     toast.success("Switching Users")
 
     //return redirect
-    return redirect("/")
+    return redirect("/Budgeting-App/")
 }

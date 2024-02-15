@@ -43,7 +43,7 @@ const BudgetItem = ({budget, showDelete = false}) => {
                 ) : (
                     <div className="flex-sm">
                         <Link
-                        to={`/budget/${budget.id}`}
+                        to={`/Budgeting-App/budget/${budget.id}`}
                         className="btn"
                         >
                         <span>View Details</span>

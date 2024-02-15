@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { redirect, useLoaderData } from "react-router-dom";
 import {createExpense, deleteItem, getAllMatchingItems } from "../helpers";
 import BudgetItem from "../components/BudgetItem";
 import AddExpenseForm from "../components/AddExpenseForm";
@@ -6,6 +6,7 @@ import Table from "../components/Table";
 import { toast } from "react-toastify";
 //loader
 export async function budgetLoader({ params }) {
+    console.log("hiiii");
     const budget = await getAllMatchingItems({
       category: "budgets",
       key: "id",
